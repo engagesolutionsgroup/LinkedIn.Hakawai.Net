@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1706.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedIn.Hakawai", "LinkedIn.Hakawai\LinkedIn.Hakawai.csproj", "{485029B3-689E-42A1-827F-D3AF00D28767}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedIn.Hakawai.Sample", "LinkedIn.Hakawai.Sample\LinkedIn.Hakawai.Sample.csproj", "{59F75706-7EB1-42B8-9A06-DA6D37076916}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{485029B3-689E-42A1-827F-D3AF00D28767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{485029B3-689E-42A1-827F-D3AF00D28767}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{485029B3-689E-42A1-827F-D3AF00D28767}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{485029B3-689E-42A1-827F-D3AF00D28767}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59F75706-7EB1-42B8-9A06-DA6D37076916}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59F75706-7EB1-42B8-9A06-DA6D37076916}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59F75706-7EB1-42B8-9A06-DA6D37076916}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59F75706-7EB1-42B8-9A06-DA6D37076916}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {913EB205-31B7-4D6A-B671-7DD55D4021B3}
+	EndGlobalSection
+EndGlobal

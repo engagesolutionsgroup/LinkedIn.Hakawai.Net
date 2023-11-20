@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net7.0-ios</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>true</ImplicitUsings>
+        <IsBindingProject>true</IsBindingProject>
+        <AssemblyName>LinkedIn.Hakawai</AssemblyName>
+        <RootNamespace>LinkedIn.Hakawai</RootNamespace>
+    </PropertyGroup>
+    <PropertyGroup>
+        <!-- NuGet Package properties -->
+        <Version>7.4.8.0</Version>
+        <Authors>Artem Valieiev</Authors>
+        <Product>LinkedIn.Hakawai</Product>
+        <Description>A subclass of UITextView providing extended functionality and support for 'plugins'. Hakawai ships with the Mentions plug-in, which provides a powerful and flexible way to easily add social-media-esque @mentions-style annotation support to your iOS app.</Description>
+        <PackageTags>Mentions;UITextView;iOS editor</PackageTags>
+        <RepositoryUrl>https://github.com/artemvalieiev/Linked.Hakawai.Net</RepositoryUrl>
+        <PackageProjectUrl>URL to project site</PackageProjectUrl>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ObjcBindingApiDefinition Include="ApiDefinitions.cs" />
+        <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <NativeReference Include="../../output/Hakawai.xcframework" Kind="Framework" />
+    </ItemGroup>
+</Project>

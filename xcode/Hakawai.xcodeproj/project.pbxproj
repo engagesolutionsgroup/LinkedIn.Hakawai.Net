@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2527006C2B0A621B004CEEC4 /* HKWTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 252700362B0A621B004CEEC4 /* HKWTextView.m */; };
+		2527006E2B0A621B004CEEC4 /* HKWTextView+Plugins.m in Sources */ = {isa = PBXBuildFile; fileRef = 252700382B0A621B004CEEC4 /* HKWTextView+Plugins.m */; };
+		252700712B0A621B004CEEC4 /* HKWAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2527003B2B0A621B004CEEC4 /* HKWAttribute.m */; };
+		252700732B0A621B004CEEC4 /* HKWDefaultChooserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2527003E2B0A621B004CEEC4 /* HKWDefaultChooserView.m */; };
+		252700762B0A621C004CEEC4 /* HKWDefaultChooserArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 252700412B0A621B004CEEC4 /* HKWDefaultChooserArrowView.m */; };
+		252700772B0A621C004CEEC4 /* HKWDefaultChooserBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 252700422B0A621B004CEEC4 /* HKWDefaultChooserBorderView.m */; };
+		252700792B0A621C004CEEC4 /* HKWTextView+TextTransformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 252700442B0A621B004CEEC4 /* HKWTextView+TextTransformation.m */; };
+		2527007B2B0A621C004CEEC4 /* HKWTextView+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 252700462B0A621B004CEEC4 /* HKWTextView+Extras.m */; };
+		2527007D2B0A621C004CEEC4 /* HKWAbstractionLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 252700492B0A621B004CEEC4 /* HKWAbstractionLayer.m */; };
+		2527007F2B0A621C004CEEC4 /* HKWRoundedRectBackgroundAttributeValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2527004C2B0A621B004CEEC4 /* HKWRoundedRectBackgroundAttributeValue.m */; };
+		252700802B0A621C004CEEC4 /* HKWLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2527004D2B0A621B004CEEC4 /* HKWLayoutManager.m */; };
+		252700812B0A621C004CEEC4 /* HKWCustomAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2527004E2B0A621B004CEEC4 /* HKWCustomAttributes.m */; };
+		2527008C2B0A621C004CEEC4 /* HKWMentionsPluginV1.m in Sources */ = {isa = PBXBuildFile; fileRef = 2527005A2B0A621B004CEEC4 /* HKWMentionsPluginV1.m */; };
+		252700932B0A621C004CEEC4 /* HKWMentionsPluginV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 252700612B0A621B004CEEC4 /* HKWMentionsPluginV2.m */; };
+		252700942B0A621C004CEEC4 /* HKWMentionsCreationStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 252700622B0A621B004CEEC4 /* HKWMentionsCreationStateMachine.m */; };
+		252700952B0A621C004CEEC4 /* HKWMentionsStartDetectionStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 252700632B0A621B004CEEC4 /* HKWMentionsStartDetectionStateMachine.m */; };
+		252700982B0A621C004CEEC4 /* HKWMentionsAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 252700662B0A621B004CEEC4 /* HKWMentionsAttribute.m */; };
+		252700992B0A621C004CEEC4 /* HKWMentionDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 252700672B0A621B004CEEC4 /* HKWMentionDataProvider.m */; };
+		2527009D2B0A621C004CEEC4 /* HKWExternalMentionConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2527006B2B0A621B004CEEC4 /* HKWExternalMentionConstants.m */; };
+		252700A22B0A627C004CEEC4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252700A12B0A627C004CEEC4 /* Foundation.framework */; };
+		252700A82B0A6671004CEEC4 /* _HKWPrivateConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 252700432B0A621B004CEEC4 /* _HKWPrivateConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700AD2B0A6681004CEEC4 /* _HKWLayoutManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2527004F2B0A621B004CEEC4 /* _HKWLayoutManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700B92B0A66A7004CEEC4 /* _HKWMentionsPrivateConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 252700682B0A621B004CEEC4 /* _HKWMentionsPrivateConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700BA2B0A68C6004CEEC4 /* Hakawai.h in Headers */ = {isa = PBXBuildFile; fileRef = 2527002E2B0A61E2004CEEC4 /* Hakawai.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700BC2B0A6B60004CEEC4 /* _HKWMentionsCreationStateMachine.h in Headers */ = {isa = PBXBuildFile; fileRef = 252700592B0A621B004CEEC4 /* _HKWMentionsCreationStateMachine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700BD2B0A6B62004CEEC4 /* _HKWMentionsStartDetectionStateMachine.h in Headers */ = {isa = PBXBuildFile; fileRef = 2527005B2B0A621B004CEEC4 /* _HKWMentionsStartDetectionStateMachine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700BE2B0A7262004CEEC4 /* HKWTextView+Extras.h in Headers */ = {isa = PBXBuildFile; fileRef = 252700372B0A621B004CEEC4 /* HKWTextView+Extras.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700BF2B0A7262004CEEC4 /* HKWSimplePluginProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 252700392B0A621B004CEEC4 /* HKWSimplePluginProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700C02B0A7262004CEEC4 /* HKWControlFlowPluginProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 2527003A2B0A621B004CEEC4 /* HKWControlFlowPluginProtocols.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700C12B0A7262004CEEC4 /* HKWTextView+Plugins.h in Headers */ = {isa = PBXBuildFile; fileRef = 252700452B0A621B004CEEC4 /* HKWTextView+Plugins.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700C22B0A7262004CEEC4 /* HKWTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 252700472B0A621B004CEEC4 /* HKWTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700C32B0A7262004CEEC4 /* HKWAbstractionLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2527004A2B0A621B004CEEC4 /* HKWAbstractionLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700C42B0A7262004CEEC4 /* HKWRoundedRectBackgroundAttributeValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 252700502B0A621B004CEEC4 /* HKWRoundedRectBackgroundAttributeValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700C52B0A7262004CEEC4 /* HKWCustomAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = 252700512B0A621B004CEEC4 /* HKWCustomAttributes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700C62B0A7262004CEEC4 /* HKWChooserViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 252700522B0A621B004CEEC4 /* HKWChooserViewProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700C72B0A7262004CEEC4 /* HKWTextView+TextTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 252700532B0A621B004CEEC4 /* HKWTextView+TextTransformation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700C82B0A7262004CEEC4 /* HKWAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 252700552B0A621B004CEEC4 /* HKWAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700C92B0A7262004CEEC4 /* HKWMentionsPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 252700582B0A621B004CEEC4 /* HKWMentionsPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700CA2B0A7262004CEEC4 /* HKWMentionsCustomChooserViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2527005C2B0A621B004CEEC4 /* HKWMentionsCustomChooserViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700CB2B0A7262004CEEC4 /* HKWMentionDataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 2527005D2B0A621B004CEEC4 /* HKWMentionDataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700CC2B0A7262004CEEC4 /* HKWMentionsAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 2527005E2B0A621B004CEEC4 /* HKWMentionsAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700CD2B0A7262004CEEC4 /* HKWMentionsDefaultChooserViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2527005F2B0A621B004CEEC4 /* HKWMentionsDefaultChooserViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700CE2B0A7262004CEEC4 /* HKWExternalMentionConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 252700602B0A621B004CEEC4 /* HKWExternalMentionConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700CF2B0A7262004CEEC4 /* HKWMentionsEntityProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 252700642B0A621B004CEEC4 /* HKWMentionsEntityProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700D02B0A7262004CEEC4 /* HKWMentionsPluginV1.h in Headers */ = {isa = PBXBuildFile; fileRef = 252700652B0A621B004CEEC4 /* HKWMentionsPluginV1.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700D12B0A7262004CEEC4 /* HKWMentionsCreationStateMachineDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 252700692B0A621B004CEEC4 /* HKWMentionsCreationStateMachineDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252700D22B0A7262004CEEC4 /* HKWMentionsPluginV2.h in Headers */ = {isa = PBXBuildFile; fileRef = 2527006A2B0A621B004CEEC4 /* HKWMentionsPluginV2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2527002B2B0A61E2004CEEC4 /* Hakawai.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hakawai.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2527002E2B0A61E2004CEEC4 /* Hakawai.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Hakawai.h; sourceTree = "<group>"; };
+		252700362B0A621B004CEEC4 /* HKWTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKWTextView.m; sourceTree = "<group>"; };
+		252700372B0A621B004CEEC4 /* HKWTextView+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HKWTextView+Extras.h"; sourceTree = "<group>"; };
+		252700382B0A621B004CEEC4 /* HKWTextView+Plugins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HKWTextView+Plugins.m"; sourceTree = "<group>"; };
+		252700392B0A621B004CEEC4 /* HKWSimplePluginProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKWSimplePluginProtocol.h; sourceTree = "<group>"; };
+		2527003A2B0A621B004CEEC4 /* HKWControlFlowPluginProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKWControlFlowPluginProtocols.h; sourceTree = "<group>"; };
+		2527003B2B0A621B004CEEC4 /* HKWAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKWAttribute.m; sourceTree = "<group>"; };
+		2527003D2B0A621B004CEEC4 /* _HKWDefaultChooserArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _HKWDefaultChooserArrowView.h; sourceTree = "<group>"; };
+		2527003E2B0A621B004CEEC4 /* HKWDefaultChooserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKWDefaultChooserView.m; sourceTree = "<group>"; };
+		2527003F2B0A621B004CEEC4 /* _HKWDefaultChooserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _HKWDefaultChooserView.h; sourceTree = "<group>"; };
+		252700402B0A621B004CEEC4 /* _HKWDefaultChooserBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _HKWDefaultChooserBorderView.h; sourceTree = "<group>"; };
+		252700412B0A621B004CEEC4 /* HKWDefaultChooserArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKWDefaultChooserArrowView.m; sourceTree = "<group>"; };
+		252700422B0A621B004CEEC4 /* HKWDefaultChooserBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKWDefaultChooserBorderView.m; sourceTree = "<group>"; };
+		252700432B0A621B004CEEC4 /* _HKWPrivateConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _HKWPrivateConstants.h; sourceTree = "<group>"; };
+		252700442B0A621B004CEEC4 /* HKWTextView+TextTransformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HKWTextView+TextTransformation.m"; sourceTree = "<group>"; };
+		252700452B0A621B004CEEC4 /* HKWTextView+Plugins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HKWTextView+Plugins.h"; sourceTree = "<group>"; };
+		252700462B0A621B004CEEC4 /* HKWTextView+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HKWTextView+Extras.m"; sourceTree = "<group>"; };
+		252700472B0A621B004CEEC4 /* HKWTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKWTextView.h; sourceTree = "<group>"; };
+		252700492B0A621B004CEEC4 /* HKWAbstractionLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKWAbstractionLayer.m; sourceTree = "<group>"; };
+		2527004A2B0A621B004CEEC4 /* HKWAbstractionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKWAbstractionLayer.h; sourceTree = "<group>"; };
+		2527004C2B0A621B004CEEC4 /* HKWRoundedRectBackgroundAttributeValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKWRoundedRectBackgroundAttributeValue.m; sourceTree = "<group>"; };
+		2527004D2B0A621B004CEEC4 /* HKWLayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKWLayoutManager.m; sourceTree = "<group>"; };
+		2527004E2B0A621B004CEEC4 /* HKWCustomAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKWCustomAttributes.m; sourceTree = "<group>"; };
+		2527004F2B0A621B004CEEC4 /* _HKWLayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _HKWLayoutManager.h; sourceTree = "<group>"; };
+		252700502B0A621B004CEEC4 /* HKWRoundedRectBackgroundAttributeValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKWRoundedRectBackgroundAttributeValue.h; sourceTree = "<group>"; };
+		252700512B0A621B004CEEC4 /* HKWCustomAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKWCustomAttributes.h; sourceTree = "<group>"; };
+		252700522B0A621B004CEEC4 /* HKWChooserViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKWChooserViewProtocol.h; sourceTree = "<group>"; };
+		252700532B0A621B004CEEC4 /* HKWTextView+TextTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HKWTextView+TextTransformation.h"; sourceTree = "<group>"; };
+		252700542B0A621B004CEEC4 /* _HKWTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _HKWTextView.h; sourceTree = "<group>"; };
+		252700552B0A621B004CEEC4 /* HKWAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKWAttribute.h; sourceTree = "<group>"; };
+		252700562B0A621B004CEEC4 /* Hakawai-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Hakawai-Prefix.pch"; sourceTree = "<group>"; };
+		252700582B0A621B004CEEC4 /* HKWMentionsPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKWMentionsPlugin.h; sourceTree = "<group>"; };
+		252700592B0A621B004CEEC4 /* _HKWMentionsCreationStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _HKWMentionsCreationStateMachine.h; sourceTree = "<group>"; };
+		2527005A2B0A621B004CEEC4 /* HKWMentionsPluginV1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKWMentionsPluginV1.m; sourceTree = "<group>"; };
+		2527005B2B0A621B004CEEC4 /* _HKWMentionsStartDetectionStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _HKWMentionsStartDetectionStateMachine.h; sourceTree = "<group>"; };
+		2527005C2B0A621B004CEEC4 /* HKWMentionsCustomChooserViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKWMentionsCustomChooserViewDelegate.h; sourceTree = "<group>"; };
+		2527005D2B0A621B004CEEC4 /* HKWMentionDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKWMentionDataProvider.h; sourceTree = "<group>"; };
+		2527005E2B0A621B004CEEC4 /* HKWMentionsAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKWMentionsAttribute.h; sourceTree = "<group>"; };
+		2527005F2B0A621B004CEEC4 /* HKWMentionsDefaultChooserViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKWMentionsDefaultChooserViewDelegate.h; sourceTree = "<group>"; };
+		252700602B0A621B004CEEC4 /* HKWExternalMentionConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKWExternalMentionConstants.h; sourceTree = "<group>"; };
+		252700612B0A621B004CEEC4 /* HKWMentionsPluginV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKWMentionsPluginV2.m; sourceTree = "<group>"; };
+		252700622B0A621B004CEEC4 /* HKWMentionsCreationStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKWMentionsCreationStateMachine.m; sourceTree = "<group>"; };
+		252700632B0A621B004CEEC4 /* HKWMentionsStartDetectionStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKWMentionsStartDetectionStateMachine.m; sourceTree = "<group>"; };
+		252700642B0A621B004CEEC4 /* HKWMentionsEntityProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKWMentionsEntityProtocol.h; sourceTree = "<group>"; };
+		252700652B0A621B004CEEC4 /* HKWMentionsPluginV1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKWMentionsPluginV1.h; sourceTree = "<group>"; };
+		252700662B0A621B004CEEC4 /* HKWMentionsAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKWMentionsAttribute.m; sourceTree = "<group>"; };
+		252700672B0A621B004CEEC4 /* HKWMentionDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKWMentionDataProvider.m; sourceTree = "<group>"; };
+		252700682B0A621B004CEEC4 /* _HKWMentionsPrivateConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _HKWMentionsPrivateConstants.h; sourceTree = "<group>"; };
+		252700692B0A621B004CEEC4 /* HKWMentionsCreationStateMachineDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKWMentionsCreationStateMachineDelegate.h; sourceTree = "<group>"; };
+		2527006A2B0A621B004CEEC4 /* HKWMentionsPluginV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKWMentionsPluginV2.h; sourceTree = "<group>"; };
+		2527006B2B0A621B004CEEC4 /* HKWExternalMentionConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKWExternalMentionConstants.m; sourceTree = "<group>"; };
+		2527009F2B0A6273004CEEC4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/System/iOSSupport/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		252700A12B0A627C004CEEC4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		252700282B0A61E2004CEEC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				252700A22B0A627C004CEEC4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		252700212B0A61E2004CEEC4 = {
+			isa = PBXGroup;
+			children = (
+				2527002D2B0A61E2004CEEC4 /* Hakawai */,
+				2527002C2B0A61E2004CEEC4 /* Products */,
+				2527009E2B0A6273004CEEC4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2527002C2B0A61E2004CEEC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2527002B2B0A61E2004CEEC4 /* Hakawai.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2527002D2B0A61E2004CEEC4 /* Hakawai */ = {
+			isa = PBXGroup;
+			children = (
+				252700352B0A621B004CEEC4 /* Core */,
+				252700562B0A621B004CEEC4 /* Hakawai-Prefix.pch */,
+				252700572B0A621B004CEEC4 /* Mentions */,
+				2527002E2B0A61E2004CEEC4 /* Hakawai.h */,
+			);
+			path = Hakawai;
+			sourceTree = "<group>";
+		};
+		252700352B0A621B004CEEC4 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				252700362B0A621B004CEEC4 /* HKWTextView.m */,
+				252700372B0A621B004CEEC4 /* HKWTextView+Extras.h */,
+				252700382B0A621B004CEEC4 /* HKWTextView+Plugins.m */,
+				252700392B0A621B004CEEC4 /* HKWSimplePluginProtocol.h */,
+				2527003A2B0A621B004CEEC4 /* HKWControlFlowPluginProtocols.h */,
+				2527003B2B0A621B004CEEC4 /* HKWAttribute.m */,
+				2527003C2B0A621B004CEEC4 /* Default */,
+				252700432B0A621B004CEEC4 /* _HKWPrivateConstants.h */,
+				252700442B0A621B004CEEC4 /* HKWTextView+TextTransformation.m */,
+				252700452B0A621B004CEEC4 /* HKWTextView+Plugins.h */,
+				252700462B0A621B004CEEC4 /* HKWTextView+Extras.m */,
+				252700472B0A621B004CEEC4 /* HKWTextView.h */,
+				252700482B0A621B004CEEC4 /* AbstractionLayer */,
+				2527004B2B0A621B004CEEC4 /* TextKit */,
+				252700522B0A621B004CEEC4 /* HKWChooserViewProtocol.h */,
+				252700532B0A621B004CEEC4 /* HKWTextView+TextTransformation.h */,
+				252700542B0A621B004CEEC4 /* _HKWTextView.h */,
+				252700552B0A621B004CEEC4 /* HKWAttribute.h */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		2527003C2B0A621B004CEEC4 /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				2527003D2B0A621B004CEEC4 /* _HKWDefaultChooserArrowView.h */,
+				2527003E2B0A621B004CEEC4 /* HKWDefaultChooserView.m */,
+				2527003F2B0A621B004CEEC4 /* _HKWDefaultChooserView.h */,
+				252700402B0A621B004CEEC4 /* _HKWDefaultChooserBorderView.h */,
+				252700412B0A621B004CEEC4 /* HKWDefaultChooserArrowView.m */,
+				252700422B0A621B004CEEC4 /* HKWDefaultChooserBorderView.m */,
+			);
+			path = Default;
+			sourceTree = "<group>";
+		};
+		252700482B0A621B004CEEC4 /* AbstractionLayer */ = {
+			isa = PBXGroup;
+			children = (
+				252700492B0A621B004CEEC4 /* HKWAbstractionLayer.m */,
+				2527004A2B0A621B004CEEC4 /* HKWAbstractionLayer.h */,
+			);
+			path = AbstractionLayer;
+			sourceTree = "<group>";
+		};
+		2527004B2B0A621B004CEEC4 /* TextKit */ = {
+			isa = PBXGroup;
+			children = (
+				2527004C2B0A621B004CEEC4 /* HKWRoundedRectBackgroundAttributeValue.m */,
+				2527004D2B0A621B004CEEC4 /* HKWLayoutManager.m */,
+				2527004E2B0A621B004CEEC4 /* HKWCustomAttributes.m */,
+				2527004F2B0A621B004CEEC4 /* _HKWLayoutManager.h */,
+				252700502B0A621B004CEEC4 /* HKWRoundedRectBackgroundAttributeValue.h */,
+				252700512B0A621B004CEEC4 /* HKWCustomAttributes.h */,
+			);
+			path = TextKit;
+			sourceTree = "<group>";
+		};
+		252700572B0A621B004CEEC4 /* Mentions */ = {
+			isa = PBXGroup;
+			children = (
+				252700582B0A621B004CEEC4 /* HKWMentionsPlugin.h */,
+				252700592B0A621B004CEEC4 /* _HKWMentionsCreationStateMachine.h */,
+				2527005A2B0A621B004CEEC4 /* HKWMentionsPluginV1.m */,
+				2527005B2B0A621B004CEEC4 /* _HKWMentionsStartDetectionStateMachine.h */,
+				2527005C2B0A621B004CEEC4 /* HKWMentionsCustomChooserViewDelegate.h */,
+				2527005D2B0A621B004CEEC4 /* HKWMentionDataProvider.h */,
+				2527005E2B0A621B004CEEC4 /* HKWMentionsAttribute.h */,
+				2527005F2B0A621B004CEEC4 /* HKWMentionsDefaultChooserViewDelegate.h */,
+				252700602B0A621B004CEEC4 /* HKWExternalMentionConstants.h */,
+				252700612B0A621B004CEEC4 /* HKWMentionsPluginV2.m */,
+				252700622B0A621B004CEEC4 /* HKWMentionsCreationStateMachine.m */,
+				252700632B0A621B004CEEC4 /* HKWMentionsStartDetectionStateMachine.m */,
+				252700642B0A621B004CEEC4 /* HKWMentionsEntityProtocol.h */,
+				252700652B0A621B004CEEC4 /* HKWMentionsPluginV1.h */,
+				252700662B0A621B004CEEC4 /* HKWMentionsAttribute.m */,
+				252700672B0A621B004CEEC4 /* HKWMentionDataProvider.m */,
+				252700682B0A621B004CEEC4 /* _HKWMentionsPrivateConstants.h */,
+				252700692B0A621B004CEEC4 /* HKWMentionsCreationStateMachineDelegate.h */,
+				2527006A2B0A621B004CEEC4 /* HKWMentionsPluginV2.h */,
+				2527006B2B0A621B004CEEC4 /* HKWExternalMentionConstants.m */,
+			);
+			path = Mentions;
+			sourceTree = "<group>";
+		};
+		2527009E2B0A6273004CEEC4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				252700A12B0A627C004CEEC4 /* Foundation.framework */,
+				2527009F2B0A6273004CEEC4 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		252700A32B0A663E004CEEC4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				252700BA2B0A68C6004CEEC4 /* Hakawai.h in Headers */,
+				252700BE2B0A7262004CEEC4 /* HKWTextView+Extras.h in Headers */,
+				252700BF2B0A7262004CEEC4 /* HKWSimplePluginProtocol.h in Headers */,
+				252700C02B0A7262004CEEC4 /* HKWControlFlowPluginProtocols.h in Headers */,
+				252700C12B0A7262004CEEC4 /* HKWTextView+Plugins.h in Headers */,
+				252700C22B0A7262004CEEC4 /* HKWTextView.h in Headers */,
+				252700C32B0A7262004CEEC4 /* HKWAbstractionLayer.h in Headers */,
+				252700C42B0A7262004CEEC4 /* HKWRoundedRectBackgroundAttributeValue.h in Headers */,
+				252700C52B0A7262004CEEC4 /* HKWCustomAttributes.h in Headers */,
+				252700C62B0A7262004CEEC4 /* HKWChooserViewProtocol.h in Headers */,
+				252700C72B0A7262004CEEC4 /* HKWTextView+TextTransformation.h in Headers */,
+				252700C82B0A7262004CEEC4 /* HKWAttribute.h in Headers */,
+				252700C92B0A7262004CEEC4 /* HKWMentionsPlugin.h in Headers */,
+				252700CA2B0A7262004CEEC4 /* HKWMentionsCustomChooserViewDelegate.h in Headers */,
+				252700BC2B0A6B60004CEEC4 /* _HKWMentionsCreationStateMachine.h in Headers */,
+				252700BD2B0A6B62004CEEC4 /* _HKWMentionsStartDetectionStateMachine.h in Headers */,
+				252700A82B0A6671004CEEC4 /* _HKWPrivateConstants.h in Headers */,
+				252700B92B0A66A7004CEEC4 /* _HKWMentionsPrivateConstants.h in Headers */,
+				252700AD2B0A6681004CEEC4 /* _HKWLayoutManager.h in Headers */,
+				252700CB2B0A7262004CEEC4 /* HKWMentionDataProvider.h in Headers */,
+				252700CC2B0A7262004CEEC4 /* HKWMentionsAttribute.h in Headers */,
+				252700CD2B0A7262004CEEC4 /* HKWMentionsDefaultChooserViewDelegate.h in Headers */,
+				252700CE2B0A7262004CEEC4 /* HKWExternalMentionConstants.h in Headers */,
+				252700CF2B0A7262004CEEC4 /* HKWMentionsEntityProtocol.h in Headers */,
+				252700D02B0A7262004CEEC4 /* HKWMentionsPluginV1.h in Headers */,
+				252700D12B0A7262004CEEC4 /* HKWMentionsCreationStateMachineDelegate.h in Headers */,
+				252700D22B0A7262004CEEC4 /* HKWMentionsPluginV2.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2527002A2B0A61E2004CEEC4 /* Hakawai */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 252700322B0A61E2004CEEC4 /* Build configuration list for PBXNativeTarget "Hakawai" */;
+			buildPhases = (
+				252700A32B0A663E004CEEC4 /* Headers */,
+				252700272B0A61E2004CEEC4 /* Sources */,
+				252700282B0A61E2004CEEC4 /* Frameworks */,
+				252700292B0A61E2004CEEC4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hakawai;
+			productName = Hakawai;
+			productReference = 2527002B2B0A61E2004CEEC4 /* Hakawai.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		252700222B0A61E2004CEEC4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					2527002A2B0A61E2004CEEC4 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 252700252B0A61E2004CEEC4 /* Build configuration list for PBXProject "Hakawai" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 252700212B0A61E2004CEEC4;
+			productRefGroup = 2527002C2B0A61E2004CEEC4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2527002A2B0A61E2004CEEC4 /* Hakawai */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		252700292B0A61E2004CEEC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		252700272B0A61E2004CEEC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				252700942B0A621C004CEEC4 /* HKWMentionsCreationStateMachine.m in Sources */,
+				252700932B0A621C004CEEC4 /* HKWMentionsPluginV2.m in Sources */,
+				252700812B0A621C004CEEC4 /* HKWCustomAttributes.m in Sources */,
+				2527006C2B0A621B004CEEC4 /* HKWTextView.m in Sources */,
+				252700802B0A621C004CEEC4 /* HKWLayoutManager.m in Sources */,
+				2527007F2B0A621C004CEEC4 /* HKWRoundedRectBackgroundAttributeValue.m in Sources */,
+				2527006E2B0A621B004CEEC4 /* HKWTextView+Plugins.m in Sources */,
+				252700712B0A621B004CEEC4 /* HKWAttribute.m in Sources */,
+				2527007B2B0A621C004CEEC4 /* HKWTextView+Extras.m in Sources */,
+				252700762B0A621C004CEEC4 /* HKWDefaultChooserArrowView.m in Sources */,
+				2527009D2B0A621C004CEEC4 /* HKWExternalMentionConstants.m in Sources */,
+				2527007D2B0A621C004CEEC4 /* HKWAbstractionLayer.m in Sources */,
+				252700792B0A621C004CEEC4 /* HKWTextView+TextTransformation.m in Sources */,
+				252700992B0A621C004CEEC4 /* HKWMentionDataProvider.m in Sources */,
+				252700982B0A621C004CEEC4 /* HKWMentionsAttribute.m in Sources */,
+				252700952B0A621C004CEEC4 /* HKWMentionsStartDetectionStateMachine.m in Sources */,
+				252700732B0A621B004CEEC4 /* HKWDefaultChooserView.m in Sources */,
+				252700772B0A621C004CEEC4 /* HKWDefaultChooserBorderView.m in Sources */,
+				2527008C2B0A621C004CEEC4 /* HKWMentionsPluginV1.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		252700302B0A61E2004CEEC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		252700312B0A61E2004CEEC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		252700332B0A61E2004CEEC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LinkedIn.Hakawai;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		252700342B0A61E2004CEEC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LinkedIn.Hakawai;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		252700252B0A61E2004CEEC4 /* Build configuration list for PBXProject "Hakawai" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				252700302B0A61E2004CEEC4 /* Debug */,
+				252700312B0A61E2004CEEC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		252700322B0A61E2004CEEC4 /* Build configuration list for PBXNativeTarget "Hakawai" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				252700332B0A61E2004CEEC4 /* Debug */,
+				252700342B0A61E2004CEEC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 252700222B0A61E2004CEEC4 /* Project object */;
+}
