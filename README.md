@@ -25,4 +25,6 @@ A subclass of `UITextView` providing extended functionality and support for 'plu
     - Can also be pulled out and used independently if you desire
 
 
-For full information see https://github.com/linkedin/Hakawai
+For complete information on the original library see https://github.com/linkedin/Hakawai
+
+For a simple setup to support mentions inside this UITextView see [DefaultChooserViewController.cs in Sample project](https://github.com/artemvalieiev/Linked.Hakawai.Net/blob/main/src/LinkedIn.Hakawai.Sample/DefaultChooserViewController.cs)
