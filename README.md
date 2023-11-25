@@ -1,4 +1,4 @@
-## [Linked.Hakawai](https://github.com/linkedin/Hakawai) .NET-iOS Binding Library 
+## [LinkedIn.Hakawai](https://github.com/linkedin/Hakawai) .NET-iOS Binding Library 
 [![NuGet version (LinkedIn.Hakawai)](https://img.shields.io/nuget/v/LinkedIn.Hakawai.svg?style=flat-square)](https://www.nuget.org/packages/LinkedIn.Hakawai/)
 ## Hakawai
 
