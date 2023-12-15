@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net7.0-ios</TargetFramework>
+        <TargetFrameworks>net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
         <Nullable>enable</Nullable>
         <ImplicitUsings>true</ImplicitUsings>
         <IsBindingProject>true</IsBindingProject>
@@ -10,7 +10,7 @@
     <PropertyGroup>
         <!-- NuGet Package properties -->
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <Version>7.4.8.1</Version>
+        <Version>7.4.8.2</Version>
         <Authors>Artem Valieiev</Authors>
         <Product>LinkedIn.Hakawai</Product>
         <Description>A subclass of UITextView providing extended functionality and support for 'plugins'. Hakawai ships with the Mentions plug-in, which provides a powerful and flexible way to easily add social-media-esque @mentions-style annotation support to your iOS app.</Description>
