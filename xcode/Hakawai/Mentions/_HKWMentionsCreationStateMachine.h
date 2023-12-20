@@ -11,6 +11,7 @@
 //
 
 #import <Hakawai/HKWMentionsCreationStateMachineDelegate.h>
+#import <Hakawai/HKWChooserViewFactory.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -37,6 +38,8 @@ NS_ASSUME_NONNULL_BEGIN
  The class of the chooser view to instantiate. Must be a subclass of the \c UIView class. If set to an invalid value or nil, defaults to the built-in chooser view.
  */
 @property (nonatomic) Class<HKWChooserViewProtocol> chooserViewClass;
+
+@property (nonatomic) id<HKWChooserViewFactory> chooserViewFactory;
 
 /**
  Character control search explicit inputted in the chooser view.

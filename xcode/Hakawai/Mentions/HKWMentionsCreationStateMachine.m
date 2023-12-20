@@ -15,6 +15,7 @@
 #import "HKWChooserViewProtocol.h"
 #import "_HKWDefaultChooserView.h"
 #import "HKWMentionsAttribute.h"
+#import "HKWChooserViewFactory.h"
 
 #import "_HKWMentionsPrivateConstants.h"
 #import "HKWMentionDataProvider.h"
@@ -96,6 +97,7 @@ typedef NS_ENUM(NSInteger, HKWMentionsCreationAction) {
 // NOTE: Do not remove these
 @synthesize chooserViewBackgroundColor = _chooserViewBackgroundColor;
 @synthesize chooserViewClass = _chooserViewClass;
+@synthesize chooserViewFactory = _chooserViewFactory;
 @synthesize chooserViewEdgeInsets = _chooserViewEdgeInsets;
 @synthesize explicitSearchControlCharacter = _explicitSearchControlCharacter;
 
@@ -511,8 +513,13 @@ typedef NS_ENUM(NSInteger, HKWMentionsCreationAction) {
                      chooserViewWithFrame:delegate: or chooserViewWithFrame:delegate:dataSource:");
         }
     } else {
+        if (self.chooserViewFactory) {
+                // Use the factory to create the chooser view
+                chooserView = [self.chooserViewFactory chooserViewWithFrame:chooserFrame];
+                NSLog(@"chooserViewFactory created");
+            }
         // If we are not using a data provider, just create the chooser view without one
-        if ([(id)self.chooserViewClass respondsToSelector:@selector(chooserViewWithFrame:)]) {
+        else if ([(id)self.chooserViewClass respondsToSelector:@selector(chooserViewWithFrame:)]) {
             chooserView = [self.chooserViewClass chooserViewWithFrame:chooserFrame];
         }
     }
@@ -695,6 +702,14 @@ typedef NS_ENUM(NSInteger, HKWMentionsCreationAction) {
         return;
     }
     _chooserViewClass = chooserViewClass;
+}
+
+- (void)setChooserViewFactory:(id<HKWChooserViewFactory>)newFactory {
+    _chooserViewFactory = newFactory;
+}
+
+- (id<HKWChooserViewFactory>)chooserViewFactory {
+    return _chooserViewFactory;
 }
 
 // TODO: remove indexPath as it's no longer needed for tracking POST-12576

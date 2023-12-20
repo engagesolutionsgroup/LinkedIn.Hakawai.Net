@@ -1167,10 +1167,22 @@ static int MAX_MENTION_QUERY_LENGTH = 100;
           controlCharacter:(unichar)character {
     // set up the chooser view prior to data request in order to support fully customized view
     [self.creationStateMachine setupChooserViewIfNeeded];
+
+    
+    __strong __auto_type strongStateChangeDelegate = self.stateChangeDelegate;
+    
+    if ([strongStateChangeDelegate respondsToSelector:@selector(mentionsPlugin:stateChangedTo:from:)]) {
+        [strongStateChangeDelegate mentionsPlugin:self stateChangedTo:HKWMentionsPluginStateCreatingMention from:
+         HKWMentionsPluginStateQuiescent];
+    }
+        
     __strong __auto_type strongCustomChooserViewDelegate = self.customChooserViewDelegate;
-    NSAssert(strongCustomChooserViewDelegate != nil, @"Must have a custom chooser view if the query is being updated directly via this method");
-    [strongCustomChooserViewDelegate didUpdateKeyString:keyString
-                                       controlCharacter:character];
+        NSAssert(strongCustomChooserViewDelegate != nil, @"Must have a custom chooser view if the query is being updated directly via this method");
+    if (strongCustomChooserViewDelegate)
+    {
+        [strongCustomChooserViewDelegate didUpdateKeyString:keyString
+                                           controlCharacter:character];
+    }
 }
 
 - (UITableViewCell *)cellForMentionsEntity:(id<HKWMentionsEntityProtocol>)entity
@@ -1213,6 +1225,10 @@ static int MAX_MENTION_QUERY_LENGTH = 100;
 - (void)cancelMentionFromStartingLocation:(__unused NSUInteger)location {
     __strong __auto_type parentTextView = self.parentTextView;
     parentTextView.shouldRejectAutocorrectInsertions = NO;
+    __strong __auto_type strongStateChangeDelegate = self.stateChangeDelegate;
+    if ([strongStateChangeDelegate respondsToSelector:@selector(mentionsPlugin:stateChangedTo:from:)]) {
+        [strongStateChangeDelegate mentionsPlugin:self stateChangedTo:HKWMentionsPluginStateQuiescent from:HKWMentionsPluginStateCreatingMention];
+    }
 }
 
 - (void)selected:(id<HKWMentionsEntityProtocol>)entity atIndexPath:(NSIndexPath *)indexPath {
@@ -1525,6 +1541,14 @@ static int MAX_MENTION_QUERY_LENGTH = 100;
 
 - (void)setChooserViewClass:(Class<HKWChooserViewProtocol>)chooserViewClass {
     self.creationStateMachine.chooserViewClass = chooserViewClass;
+}
+
+- (id<HKWChooserViewFactory>)chooserViewFactory {
+    return self.creationStateMachine.chooserViewFactory;
+}
+
+- (void)setChooserViewFactory:(id<HKWChooserViewFactory>)chooserViewFactory {
+    self.creationStateMachine.chooserViewFactory = chooserViewFactory;
 }
 
 /*!

@@ -21,23 +21,14 @@ public partial class CustomViewController : UIViewController
         base.ViewDidLoad();
 
         var characterSet = NSCharacterSet.FromString("@+＠");
-
         HKWTextView.EnableMentionsPluginV2 = true;
+        HKWTextView.DirectlyUpdateQueryWithCustomDelegate = true;
         mentionsPlugin =
             HKWMentionsPluginV2.MentionsPluginWithChooserMode(
                 HKWMentionsChooserPositionMode.CustomLockBottomNoArrow,
                 characterSet, 1);
 
-        // If the text view loses focus while the mention chooser is up, and then regains focus, it will automatically put
-        //  the mentions chooser back up
-
-        // Add edge insets so chooser view doesn't overlap the text view's cosmetic grey border
-        //mentionsPlugin.ChooserViewEdgeInsets = new UIEdgeInsets(2f, 0.5f, 0.5f, 0.5f);
-
-        MyTextView.ControlFlowPlugin = mentionsPlugin;
-
         var mentionsManager = new MentionsManager(MentionTableView);
-
         mentionsPlugin.CustomChooserViewDelegate = mentionsManager;
         mentionsPlugin.StateChangeDelegate = new MentionsStateChangeDelegate(MentionTableView);
 
@@ -45,7 +36,8 @@ public partial class CustomViewController : UIViewController
         {
             OnSelected = OnSelected
         };
-
+        
+        MyTextView.ControlFlowPlugin = mentionsPlugin;
         MyTextView.SetOnAccessoryViewAttachmentBlock((UIView view, bool enabled) =>
         {
             Console.WriteLine(view?.ToString() ?? "NULL");
@@ -100,17 +92,29 @@ public class MentionsStateChangeDelegate : HKWMentionsStateChangeDelegate
 
     public override void Selected(HKWMentionsEntityProtocol entity, NSIndexPath indexPath)
     {
-        // base.Selected(entity, indexPath);
+        _mentionTableView.Hidden = true;
+    }
+
+    public override void StateChangedTo(HKWMentionsPlugin plugin, HKWMentionsPluginState newState,
+        HKWMentionsPluginState oldState)
+    {
+        if(newState == HKWMentionsPluginState.Quiescent)
+            _mentionTableView.Hidden = true;
+    }
+
+    public override void  MentionsPluginWillActivateChooserView(HKWMentionsPlugin plugin)
+    {
+        _mentionTableView.Hidden = false;
     }
 
     public override void MentionsPluginActivatedChooserView(HKWMentionsPlugin plugin)
     {
-        base.MentionsPluginActivatedChooserView(plugin);
+        _mentionTableView.Hidden = false;
     }
 
     public override void MentionsPluginDeactivatedChooserView(HKWMentionsPlugin plugin)
     {
-        base.MentionsPluginDeactivatedChooserView(plugin);
+        _mentionTableView.Hidden = true;
     }
 }
 
@@ -133,6 +137,9 @@ public class MentionsManager : HKWMentionsCustomChooserViewDelegate
             mentionTableViewSource.Source = filtered;
             _tableView.ReloadData();
         }
+
+        if (keyString != null && character != 0)
+            _tableView.Hidden = false;
     }
 
     public override bool EntityCanBeTrimmed(HKWMentionsEntityProtocol entity)

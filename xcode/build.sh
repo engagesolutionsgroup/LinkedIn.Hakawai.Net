@@ -10,13 +10,13 @@ MACCATALYST_OUTPUT_DIR="../output/Frameworks/Release-maccatalyst"
 XCFRAMEWORK_OUTPUT_DIR="../output/"
 FRAMEWORK_NAME="Hakawai"
 # Run xcodebuild for iphoneos
-#xcodebuild archive -scheme Hakawai -destination "generic/platform=iOS" -archivePath $IPHONEOS_OUTPUT_DIR
+xcodebuild archive -scheme Hakawai -destination "generic/platform=iOS" -archivePath $IPHONEOS_OUTPUT_DIR
 
 # Run xcodebuild for iphonesimulator
-#xcodebuild archive -scheme Hakawai -destination "generic/platform=iOS Simulator" -archivePath $IPHONESIMULATOR_OUTPUT_DIR
+xcodebuild archive -scheme Hakawai -destination "generic/platform=iOS Simulator" -archivePath $IPHONESIMULATOR_OUTPUT_DIR
 
 #Run xcodebuild for MacCatalyst
-#xcodebuild archive -scheme Hakawai -destination "generic/platform=macOS,variant=Mac Catalyst" -archivePath $MACCATALYST_OUTPUT_DIR
+xcodebuild archive -scheme Hakawai -destination "generic/platform=macOS,variant=Mac Catalyst" -archivePath $MACCATALYST_OUTPUT_DIR
 
 #create xcframework 
 xcodebuild -create-xcframework \

@@ -8,6 +8,6 @@
         <RootNamespace>Hakawai.Sample</RootNamespace>
     </PropertyGroup>
     <ItemGroup>
-        <ProjectReference Include="..\LinkedIn.Hakawai\LinkedIn.Hakawai.csproj"/>
+      <ProjectReference Include="..\LinkedIn.Hakawai\LinkedIn.Hakawai.csproj" />
     </ItemGroup>
 </Project>

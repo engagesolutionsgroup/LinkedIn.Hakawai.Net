@@ -55,6 +55,7 @@
 		252700D12B0A7262004CEEC4 /* HKWMentionsCreationStateMachineDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 252700692B0A621B004CEEC4 /* HKWMentionsCreationStateMachineDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		252700D22B0A7262004CEEC4 /* HKWMentionsPluginV2.h in Headers */ = {isa = PBXBuildFile; fileRef = 2527006A2B0A621B004CEEC4 /* HKWMentionsPluginV2.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		256037412B2CB91E001902EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 256037402B2CB91E001902EF /* UIKit.framework */; };
+		25F7EA862B335613004BA1D4 /* HKWChooserViewFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 25F7EA852B3353DA004BA1D4 /* HKWChooserViewFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +114,7 @@
 		2527009F2B0A6273004CEEC4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/System/iOSSupport/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		252700A12B0A627C004CEEC4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		256037402B2CB91E001902EF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/iOSSupport/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		25F7EA852B3353DA004BA1D4 /* HKWChooserViewFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HKWChooserViewFactory.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +241,7 @@
 				252700692B0A621B004CEEC4 /* HKWMentionsCreationStateMachineDelegate.h */,
 				2527006A2B0A621B004CEEC4 /* HKWMentionsPluginV2.h */,
 				2527006B2B0A621B004CEEC4 /* HKWExternalMentionConstants.m */,
+				25F7EA852B3353DA004BA1D4 /* HKWChooserViewFactory.h */,
 			);
 			path = Mentions;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				252700BF2B0A7262004CEEC4 /* HKWSimplePluginProtocol.h in Headers */,
 				252700C02B0A7262004CEEC4 /* HKWControlFlowPluginProtocols.h in Headers */,
 				252700C12B0A7262004CEEC4 /* HKWTextView+Plugins.h in Headers */,
+				25F7EA862B335613004BA1D4 /* HKWChooserViewFactory.h in Headers */,
 				252700C22B0A7262004CEEC4 /* HKWTextView.h in Headers */,
 				252700C32B0A7262004CEEC4 /* HKWAbstractionLayer.h in Headers */,
 				252700C42B0A7262004CEEC4 /* HKWRoundedRectBackgroundAttributeValue.h in Headers */,

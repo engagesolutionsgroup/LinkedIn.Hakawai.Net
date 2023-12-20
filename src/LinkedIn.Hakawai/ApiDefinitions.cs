@@ -618,6 +618,11 @@ public static class Constants
 	public static readonly NSString HKWRoundedRectBackgroundAttributeName = new NSString("HKWRoundedRectBackgroundAttributeName");
 }
 
+public partial interface IHKWChooserViewProtocol
+{
+	
+}
+
 // @protocol HKWChooserViewProtocol <NSObject>
 /*
   Check whether adding [Model] to this declaration is appropriate.
@@ -627,9 +632,9 @@ public static class Constants
   the generated interface. If consumers are not supposed to implement this
   protocol, then [Model] is redundant and will generate code that will never
   be used.
-*/[Protocol, Model]
-[BaseType (typeof(NSObject))]
-interface HKWChooserViewProtocol
+*/[Protocol]
+[BaseType(typeof(UIView))]
+interface HKWChooserViewProtocol 
 {
 	// @required -(void)becomeVisible;
 	[Abstract]
@@ -693,7 +698,7 @@ interface HKWMentionsStateChangeDelegate
 {
 	// @optional -(void)mentionsPlugin:(id<HKWMentionsPlugin> _Null_unspecified)plugin stateChangedTo:(HKWMentionsPluginState)newState from:(HKWMentionsPluginState)oldState;
 	[Export ("mentionsPlugin:stateChangedTo:from:")]
-	void MentionsPlugin (HKWMentionsPlugin plugin, HKWMentionsPluginState newState, HKWMentionsPluginState oldState);
+	void StateChangedTo (HKWMentionsPlugin plugin, HKWMentionsPluginState newState, HKWMentionsPluginState oldState);
 
 	// @optional -(void)mentionsPluginWillActivateChooserView:(id<HKWMentionsPlugin> _Null_unspecified)plugin;
 	[Export ("mentionsPluginWillActivateChooserView:")]
@@ -733,7 +738,8 @@ interface HKWMentionsStateChangeDelegate
   the generated interface. If consumers are not supposed to implement this
   protocol, then [Model] is redundant and will generate code that will never
   be used.
-*/[Protocol]
+*/
+[Protocol]
 [BaseType(typeof(HKWDirectControlFlowPluginProtocol))]
 interface HKWMentionsPlugin : HKWSimplePluginProtocol 
 {
@@ -933,6 +939,9 @@ interface HKWMentionsPluginV2 : HKWMentionsPlugin
 	[Static]
 	[Export ("mentionsPluginWithChooserMode:controlCharacters:controlCharactersToPrepend:searchLength:unhighlightedMentionAttributes:highlightedMentionAttributes:")]
 	HKWMentionsPluginV2 MentionsPluginWithChooserMode (HKWMentionsChooserPositionMode mode, NSCharacterSet controlCharacterSet, NSCharacterSet controlCharactersToPrepend, nint searchLength, NSDictionary unhighlightedAttributes, NSDictionary highlightedAttributes);
+	
+	[Export("setChooserViewFactory:")]
+	void SetChooserViewFactory(HKWChooserViewFactory chooserViewFactory);
 }
 
 // @protocol HKWMentionsCreationStateMachineDelegate <HKWMentionsDefaultChooserViewDelegate, HKWMentionsCustomChooserViewDelegate>
@@ -1271,7 +1280,7 @@ interface HKWMentionDataProvider : IUITableViewDataSource, IUITableViewDelegate
 
 // @interface HKWMentionsPluginV1 : NSObject <HKWMentionsPlugin>
 [BaseType (typeof(HKWMentionsPlugin))]
-interface HKWMentionsPluginV1 
+interface HKWMentionsPluginV1 : HKWMentionsPlugin
 {
 	// +(instancetype _Nonnull)mentionsPluginWithChooserMode:(HKWMentionsChooserPositionMode)mode;
 	[Static]
@@ -1379,3 +1388,13 @@ interface HKWMentionsStartDetectionStateMachine
 	string WordAfterLocation (nuint location, string text);
 }
 
+// @interface HKWChooserViewFactory : NSObject
+[BaseType (typeof(NSObject))]
+[Protocol, Model]
+interface HKWChooserViewFactory
+{
+	//- (id<HKWChooserViewProtocol>)chooserViewWithFrame:(CGRect)frame;
+	[Abstract]
+	[Export("chooserViewWithFrame:")]
+	IHKWChooserViewProtocol ChooserViewWithFrame (CGRect frame);
+}

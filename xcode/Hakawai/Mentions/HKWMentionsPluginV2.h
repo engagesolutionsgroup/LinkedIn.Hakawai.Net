@@ -7,10 +7,14 @@
 //
 
 #import <Hakawai/HKWMentionsPlugin.h>
+#import <Hakawai/HKWChooserViewFactory.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HKWMentionsPluginV2 : NSObject <HKWMentionsPlugin>
+
+// Artem Valieiev
+@property (nonatomic, strong) id<HKWChooserViewFactory> chooserViewFactory;
 
 /*!
  Instantiate a mentions plug-in with the specified chooser mode, no control characters, and a default search length of
