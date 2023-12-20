@@ -10,7 +10,7 @@
     <PropertyGroup>
         <!-- NuGet Package properties -->
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <Version>7.4.8.2</Version>
+        <Version>7.4.8.4</Version>
         <Authors>Artem Valieiev</Authors>
         <Product>LinkedIn.Hakawai</Product>
         <Description>A subclass of UITextView providing extended functionality and support for 'plugins'. Hakawai ships with the Mentions plug-in, which provides a powerful and flexible way to easily add social-media-esque @mentions-style annotation support to your iOS app.</Description>
@@ -29,7 +29,7 @@
       <NativeReference Include="../../output/Hakawai.xcframework" Kind="Framework" />
     </ItemGroup>
     <ItemGroup>
-        <None Include="../../README.md" Pack="true" PackagePath="\"/>
+        <None Include="../../README.md" Pack="true" PackagePath="\" />
     </ItemGroup>
 
 
@@ -44,13 +44,9 @@
         <_StripBitcodeFromFrameworksMasterDependsOnTargets Condition="'$(OS)'!='Unix'">_StripBitcodeFromFrameworksOnWindows</_StripBitcodeFromFrameworksMasterDependsOnTargets>
     </PropertyGroup>
 
-    <Target Name="_StripBitcodeFromFrameworksMasterTarget"
-            Condition="'$(_StripBitcodeFromFrameworksMasterDependsOnTargets)'!='' AND @(_FrameworkNativeReference->Count()) != 0"
-            AfterTargets="$(_StripBitcodeFromFrameworksMasterAfterTargets)"
-            DependsOnTargets="$(_StripBitcodeFromFrameworksMasterDependsOnTargets)" />
+    <Target Name="_StripBitcodeFromFrameworksMasterTarget" Condition="'$(_StripBitcodeFromFrameworksMasterDependsOnTargets)'!='' AND @(_FrameworkNativeReference-&gt;Count()) != 0" AfterTargets="$(_StripBitcodeFromFrameworksMasterAfterTargets)" DependsOnTargets="$(_StripBitcodeFromFrameworksMasterDependsOnTargets)" />
 
-    <Target Name="_StripBitcodeFromFrameworksOnMac"
-            Condition="('$(OutputType)'!='Library' OR '$(IsAppExtension)'=='True') AND '$(_SdkIsSimulator)'=='False'">
+    <Target Name="_StripBitcodeFromFrameworksOnMac" Condition="('$(OutputType)'!='Library' OR '$(IsAppExtension)'=='True') AND '$(_SdkIsSimulator)'=='False'">
 
         <!-- Find the bitcode_strip command -->
         <Exec Command="xcrun -find bitcode_strip" ConsoleToMSBuild="true">
@@ -61,16 +57,11 @@
         <Exec Command="$(_BitcodeStripCommand) %(_FrameworkNativeReference.Identity) -r -o %(_FrameworkNativeReference.Identity)" />
     </Target>
 
-    <Target Name="_StripBitcodeFromFrameworksOnWindows"
-            Condition="('$(OutputType)'!='Library' OR '$(IsAppExtension)'=='True') AND '$(_SdkIsSimulator)'=='False' AND '$(IsMacEnabled)'=='true'">
+    <Target Name="_StripBitcodeFromFrameworksOnWindows" Condition="('$(OutputType)'!='Library' OR '$(IsAppExtension)'=='True') AND '$(_SdkIsSimulator)'=='False' AND '$(IsMacEnabled)'=='true'">
 
         <!-- Strip the bitcode from frameworks -->
-        <Exec SessionId="$(BuildSessionId)"
-              Command="&quot;%24(xcrun -find bitcode_strip)&quot; %(_FrameworkNativeReference.Identity) -r -o %(_FrameworkNativeReference.Identity)" />
+        <Exec SessionId="$(BuildSessionId)" Command="&quot;%24(xcrun -find bitcode_strip)&quot; %(_FrameworkNativeReference.Identity) -r -o %(_FrameworkNativeReference.Identity)" />
 
-        <CopyFileFromBuildServer
-                SessionId="$(BuildSessionId)"
-                File="%(_FrameworkNativeReference.Identity)"
-                TargetFile="%(_FrameworkNativeReference.Identity)" />
+        <CopyFileFromBuildServer SessionId="$(BuildSessionId)" File="%(_FrameworkNativeReference.Identity)" TargetFile="%(_FrameworkNativeReference.Identity)" />
     </Target>
 </Project>
