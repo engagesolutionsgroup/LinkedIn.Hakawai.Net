@@ -7,6 +7,9 @@
         <SupportedOSPlatformVersion>13.0</SupportedOSPlatformVersion>
         <RootNamespace>Hakawai.Sample</RootNamespace>
     </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <MtouchLink>SdkOnly</MtouchLink>
+    </PropertyGroup>
     <ItemGroup>
       <ProjectReference Include="..\LinkedIn.Hakawai\LinkedIn.Hakawai.csproj" />
     </ItemGroup>

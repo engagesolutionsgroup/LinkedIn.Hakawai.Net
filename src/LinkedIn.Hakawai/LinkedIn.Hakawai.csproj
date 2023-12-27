@@ -1,67 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <TargetFrameworks>net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
-        <Nullable>enable</Nullable>
-        <ImplicitUsings>true</ImplicitUsings>
-        <IsBindingProject>true</IsBindingProject>
-        <AssemblyName>LinkedIn.Hakawai</AssemblyName>
-        <RootNamespace>LinkedIn.Hakawai</RootNamespace>
-    </PropertyGroup>
-    <PropertyGroup>
-        <!-- NuGet Package properties -->
-        <PackageReadmeFile>README.md</PackageReadmeFile>
-        <Version>7.4.8.4</Version>
-        <Authors>Artem Valieiev</Authors>
-        <Product>LinkedIn.Hakawai</Product>
-        <Description>A subclass of UITextView providing extended functionality and support for 'plugins'. Hakawai ships with the Mentions plug-in, which provides a powerful and flexible way to easily add social-media-esque @mentions-style annotation support to your iOS app.</Description>
-        <PackageTags>Mentions;UITextView;iOS editor</PackageTags>
-        <RepositoryUrl>https://github.com/artemvalieiev/Linked.Hakawai.Net</RepositoryUrl>
-        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    </PropertyGroup>
-
-    <ItemGroup>
-        <ObjcBindingApiDefinition Include="ApiDefinitions.cs" />
-        <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <NativeReference Include="../../output/Hakawai.xcframework" Kind="Framework" />
-    </ItemGroup>
-    <ItemGroup>
-        <None Include="../../README.md" Pack="true" PackagePath="\" />
-    </ItemGroup>
-
-
-    <!-- hack from https://github.com/dotnet/maui/issues/10989 -->
-    <PropertyGroup>
-        <!-- Properties used to strip bitcode from frameworks when using Visual Studio for Mac -->
-        <_StripBitcodeFromFrameworksMasterAfterTargets Condition="'$(OS)'=='Unix'">_ExpandNativeReferences</_StripBitcodeFromFrameworksMasterAfterTargets>
-        <_StripBitcodeFromFrameworksMasterDependsOnTargets Condition="'$(OS)'=='Unix'">_StripBitcodeFromFrameworksOnMac</_StripBitcodeFromFrameworksMasterDependsOnTargets>
-
-        <!-- Properties used to strip bitcode from frameworks when using Visual Studio for Windows -->
-        <_StripBitcodeFromFrameworksMasterAfterTargets Condition="'$(OS)'!='Unix'">_ComputeFrameworkFilesToPublish</_StripBitcodeFromFrameworksMasterAfterTargets>
-        <_StripBitcodeFromFrameworksMasterDependsOnTargets Condition="'$(OS)'!='Unix'">_StripBitcodeFromFrameworksOnWindows</_StripBitcodeFromFrameworksMasterDependsOnTargets>
-    </PropertyGroup>
-
-    <Target Name="_StripBitcodeFromFrameworksMasterTarget" Condition="'$(_StripBitcodeFromFrameworksMasterDependsOnTargets)'!='' AND @(_FrameworkNativeReference-&gt;Count()) != 0" AfterTargets="$(_StripBitcodeFromFrameworksMasterAfterTargets)" DependsOnTargets="$(_StripBitcodeFromFrameworksMasterDependsOnTargets)" />
-
-    <Target Name="_StripBitcodeFromFrameworksOnMac" Condition="('$(OutputType)'!='Library' OR '$(IsAppExtension)'=='True') AND '$(_SdkIsSimulator)'=='False'">
-
-        <!-- Find the bitcode_strip command -->
-        <Exec Command="xcrun -find bitcode_strip" ConsoleToMSBuild="true">
-            <Output TaskParameter="ConsoleOutput" PropertyName="_BitcodeStripCommand" />
-        </Exec>
-
-        <!-- Strip the bitcode from frameworks -->
-        <Exec Command="$(_BitcodeStripCommand) %(_FrameworkNativeReference.Identity) -r -o %(_FrameworkNativeReference.Identity)" />
-    </Target>
-
-    <Target Name="_StripBitcodeFromFrameworksOnWindows" Condition="('$(OutputType)'!='Library' OR '$(IsAppExtension)'=='True') AND '$(_SdkIsSimulator)'=='False' AND '$(IsMacEnabled)'=='true'">
-
-        <!-- Strip the bitcode from frameworks -->
-        <Exec SessionId="$(BuildSessionId)" Command="&quot;%24(xcrun -find bitcode_strip)&quot; %(_FrameworkNativeReference.Identity) -r -o %(_FrameworkNativeReference.Identity)" />
-
-        <CopyFileFromBuildServer SessionId="$(BuildSessionId)" File="%(_FrameworkNativeReference.Identity)" TargetFile="%(_FrameworkNativeReference.Identity)" />
-    </Target>
+	<PropertyGroup>
+		<TargetFrameworks>net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>true</ImplicitUsings>
+		<IsBindingProject>true</IsBindingProject>
+		<AssemblyName>LinkedIn.Hakawai</AssemblyName>
+		<RootNamespace>LinkedIn.Hakawai</RootNamespace>
+	</PropertyGroup>
+	<PropertyGroup>
+		<!-- NuGet Package properties -->
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Version>7.4.8.7</Version>
+		<Authors>Artem Valieiev</Authors>
+		<Product>LinkedIn.Hakawai</Product>
+		<Description>A subclass of UITextView providing extended functionality and support for 'plugins'. Hakawai ships with the Mentions plug-in, which provides a powerful and flexible way to easily add social-media-esque @mentions-style annotation support to your iOS app.</Description>
+		<PackageTags>Mentions;UITextView;iOS editor</PackageTags>
+		<RepositoryUrl>https://github.com/artemvalieiev/Linked.Hakawai.Net</RepositoryUrl>
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	</PropertyGroup>
+	<ItemGroup>
+		<ObjcBindingApiDefinition Include="ApiDefinitions.cs" />
+		<ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<NativeReference Include="../../output/Hakawai.xcframework" Kind="Framework" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="../../README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+	<!-- hack from https://github.com/dotnet/maui/issues/10989 -->
+	<PropertyGroup>
+		<!-- Properties used to strip bitcode from frameworks when using Visual Studio for Mac -->
+		<_StripBitcodeFromFrameworksMasterAfterTargets Condition="'$(OS)'=='Unix'">_ExpandNativeReferences</_StripBitcodeFromFrameworksMasterAfterTargets>
+		<_StripBitcodeFromFrameworksMasterDependsOnTargets Condition="'$(OS)'=='Unix'">_StripBitcodeFromFrameworksOnMac</_StripBitcodeFromFrameworksMasterDependsOnTargets>
+		<!-- Properties used to strip bitcode from frameworks when using Visual Studio for Windows -->
+		<_StripBitcodeFromFrameworksMasterAfterTargets Condition="'$(OS)'!='Unix'">_ComputeFrameworkFilesToPublish</_StripBitcodeFromFrameworksMasterAfterTargets>
+		<_StripBitcodeFromFrameworksMasterDependsOnTargets Condition="'$(OS)'!='Unix'">_StripBitcodeFromFrameworksOnWindows</_StripBitcodeFromFrameworksMasterDependsOnTargets>
+	</PropertyGroup>
+	<Target Name="_StripBitcodeFromFrameworksMasterTarget" Condition="'$(_StripBitcodeFromFrameworksMasterDependsOnTargets)'!='' AND @(_FrameworkNativeReference-&gt;Count()) != 0" AfterTargets="$(_StripBitcodeFromFrameworksMasterAfterTargets)" DependsOnTargets="$(_StripBitcodeFromFrameworksMasterDependsOnTargets)" />
+	<Target Name="_StripBitcodeFromFrameworksOnMac" Condition="('$(OutputType)'!='Library' OR '$(IsAppExtension)'=='True') AND '$(_SdkIsSimulator)'=='False'">
+		<!-- Find the bitcode_strip command -->
+		<Exec Command="xcrun -find bitcode_strip" ConsoleToMSBuild="true">
+			<Output TaskParameter="ConsoleOutput" PropertyName="_BitcodeStripCommand" />
+		</Exec>
+		<!-- Strip the bitcode from frameworks -->
+		<Exec Command="$(_BitcodeStripCommand) %(_FrameworkNativeReference.Identity) -r -o %(_FrameworkNativeReference.Identity)" />
+	</Target>
+	<Target Name="_StripBitcodeFromFrameworksOnWindows" Condition="('$(OutputType)'!='Library' OR '$(IsAppExtension)'=='True') AND '$(_SdkIsSimulator)'=='False' AND '$(IsMacEnabled)'=='true'">
+		<!-- Strip the bitcode from frameworks -->
+		<Exec SessionId="$(BuildSessionId)" Command="&quot;%24(xcrun -find bitcode_strip)&quot; %(_FrameworkNativeReference.Identity) -r -o %(_FrameworkNativeReference.Identity)" />
+		<CopyFileFromBuildServer SessionId="$(BuildSessionId)" File="%(_FrameworkNativeReference.Identity)" TargetFile="%(_FrameworkNativeReference.Identity)" />
+	</Target>
 </Project>

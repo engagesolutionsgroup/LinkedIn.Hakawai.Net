@@ -9,6 +9,16 @@ MACCATALYST_OUTPUT_DIR="../output/Frameworks/Release-maccatalyst"
 # Run xcodebuild for Mac Catalyst (both x86_64 and arm64)
 XCFRAMEWORK_OUTPUT_DIR="../output/"
 FRAMEWORK_NAME="Hakawai"
+
+# Clean folder
+if [ -d "$XCFRAMEWORK_OUTPUT_DIR" ]; then
+  # Remove directory and its contents
+  rm -r "$XCFRAMEWORK_OUTPUT_DIR"
+fi
+
+# Create the directory again
+mkdir "$XCFRAMEWORK_OUTPUT_DIR"
+
 # Run xcodebuild for iphoneos
 xcodebuild archive -scheme Hakawai -destination "generic/platform=iOS" -archivePath $IPHONEOS_OUTPUT_DIR
 

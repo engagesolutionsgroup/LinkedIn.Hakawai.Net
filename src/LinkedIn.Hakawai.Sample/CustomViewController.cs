@@ -36,13 +36,8 @@ public partial class CustomViewController : UIViewController
         {
             OnSelected = OnSelected
         };
-        
+
         MyTextView.ControlFlowPlugin = mentionsPlugin;
-        MyTextView.SetOnAccessoryViewAttachmentBlock((UIView view, bool enabled) =>
-        {
-            Console.WriteLine(view?.ToString() ?? "NULL");
-            Console.WriteLine(enabled.ToString());
-        });
     }
 
     private void OnSelected(MentionEntity obj)
@@ -98,11 +93,11 @@ public class MentionsStateChangeDelegate : HKWMentionsStateChangeDelegate
     public override void StateChangedTo(HKWMentionsPlugin plugin, HKWMentionsPluginState newState,
         HKWMentionsPluginState oldState)
     {
-        if(newState == HKWMentionsPluginState.Quiescent)
+        if (newState == HKWMentionsPluginState.Quiescent)
             _mentionTableView.Hidden = true;
     }
 
-    public override void  MentionsPluginWillActivateChooserView(HKWMentionsPlugin plugin)
+    public override void MentionsPluginWillActivateChooserView(HKWMentionsPlugin plugin)
     {
         _mentionTableView.Hidden = false;
     }

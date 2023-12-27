@@ -29,12 +29,6 @@ public partial class DefaultChooserViewController : UIViewController
 
         mentionsPlugin.DefaultChooserViewDelegate = new SampleDefaultChooserView();
         textView!.ControlFlowPlugin = mentionsPlugin;
-
-        textView.SetOnAccessoryViewAttachmentBlock((UIView view, bool enabled) =>
-        {
-            Console.WriteLine(view?.ToString() ?? "NULL");
-            Console.WriteLine(enabled.ToString());
-        });
     }
 }
 

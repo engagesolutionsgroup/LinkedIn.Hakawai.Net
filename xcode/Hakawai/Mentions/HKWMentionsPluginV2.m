@@ -1170,7 +1170,6 @@ static int MAX_MENTION_QUERY_LENGTH = 100;
 
     
     __strong __auto_type strongStateChangeDelegate = self.stateChangeDelegate;
-    
     if ([strongStateChangeDelegate respondsToSelector:@selector(mentionsPlugin:stateChangedTo:from:)]) {
         [strongStateChangeDelegate mentionsPlugin:self stateChangedTo:HKWMentionsPluginStateCreatingMention from:
          HKWMentionsPluginStateQuiescent];
