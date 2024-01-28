@@ -174,6 +174,9 @@ interface HKWTextView
     // @property (readonly, nonatomic) BOOL inSingleLineViewportMode;
     [Export("inSingleLineViewportMode")]
     bool InSingleLineViewportMode { get; }
+    
+    [Export("customTypingAttributes")]
+    NSMutableDictionary CustomTypingAttributes { get; set; }
 }
 
 // @interface Plugins (HKWTextView)
