@@ -82,15 +82,23 @@ static BOOL enableControlCharacterMaxLengthFix = YES;
 #pragma mark - Lifecycle
 
 - (instancetype _Nonnull)initWithFrame:(CGRect)frame textContainer:(nullable __unused NSTextContainer *)textContainer {
-    HKWLayoutManager *manager = [HKWLayoutManager new];
-    NSTextContainer *container = [[NSTextContainer alloc] initWithSize:CGSizeMake(frame.size.width, FLT_MAX)];
-    container.widthTracksTextView = YES;
-    container.heightTracksTextView = NO;
-    [manager addTextContainer:container];
-    NSTextStorage *storage = [[NSTextStorage alloc] initWithAttributedString:self.attributedText];
-    [storage addLayoutManager:manager];
+    
+    if (@available(iOS 15.0, *)) {
+        self = [super initWithFrame:frame textContainer: textContainer];
+        
+    } else {
+        NSTextContainer *container = [[NSTextContainer alloc] initWithSize:CGSizeMake(frame.size.width, FLT_MAX)];
+        container.widthTracksTextView = YES;
+        container.heightTracksTextView = NO;
+        // Fallback on earlier versions
+        HKWLayoutManager *manager = [HKWLayoutManager new];
+        [manager addTextContainer:container];
+        NSTextStorage *storage = [[NSTextStorage alloc] initWithAttributedString:self.attributedText];
+        [storage addLayoutManager:manager];
+        self = [super initWithFrame:frame textContainer:container];
+    }
 
-    self = [super initWithFrame:frame textContainer:container];
+  
     if (self) {
         [self setup];
     }
@@ -98,15 +106,21 @@ static BOOL enableControlCharacterMaxLengthFix = YES;
 }
 
 - (instancetype _Nonnull)initWithFrame:(CGRect)frame {
-    HKWLayoutManager *manager = [HKWLayoutManager new];
-    NSTextContainer *container = [[NSTextContainer alloc] initWithSize:CGSizeMake(frame.size.width, FLT_MAX)];
-    container.widthTracksTextView = YES;
-    container.heightTracksTextView = NO;
-    [manager addTextContainer:container];
-    NSTextStorage *storage = [[NSTextStorage alloc] initWithAttributedString:self.attributedText];
-    [storage addLayoutManager:manager];
+   
+    if (@available(iOS 15.0, *)) {
+        self = [super initWithFrame:frame];
+    } else {
+        NSTextContainer *container = [[NSTextContainer alloc] initWithSize:CGSizeMake(frame.size.width, FLT_MAX)];
+        container.widthTracksTextView = YES;
+        container.heightTracksTextView = NO;
+        HKWLayoutManager *manager = [HKWLayoutManager new];
+        [manager addTextContainer:container];
+        NSTextStorage *storage = [[NSTextStorage alloc] initWithAttributedString:self.attributedText];
+        [storage addLayoutManager:manager];
+        self = [super initWithFrame:frame textContainer:container];
+    }
 
-    self = [super initWithFrame:frame textContainer:container];
+    
     if (self) {
         [self setup];
     }
@@ -115,18 +129,24 @@ static BOOL enableControlCharacterMaxLengthFix = YES;
 
 // Build custom text container if the consumer is using a XIB.
 - (id)awakeAfterUsingCoder:(__unused NSCoder *)aDecoder {
-    HKWLayoutManager *manager = [HKWLayoutManager new];
+    
+    HKWTextView *replacement = NULL;
+    if (@available(iOS 15.0, *)) {
+        replacement = [[[self class] alloc] initWithFrame:self.frame];
+    } else {
+        HKWLayoutManager *manager = [HKWLayoutManager new];
 
-    NSTextContainer *container = [[NSTextContainer alloc] initWithSize:self.textContainer.size];
-    container.widthTracksTextView = self.textContainer.widthTracksTextView;
-    container.heightTracksTextView = self.textContainer.heightTracksTextView;
+        NSTextContainer *container = [[NSTextContainer alloc] initWithSize:self.textContainer.size];
+        container.widthTracksTextView = self.textContainer.widthTracksTextView;
+        container.heightTracksTextView = self.textContainer.heightTracksTextView;
 
-    [manager addTextContainer:container];
+        [manager addTextContainer:container];
 
-    NSTextStorage *storage = [[NSTextStorage alloc] initWithAttributedString:self.attributedText];
-    [storage addLayoutManager:manager];
-
-    HKWTextView *replacement = [[[self class] alloc] initWithFrame:self.frame textContainer:container];
+        NSTextStorage *storage = [[NSTextStorage alloc] init];
+        [storage addLayoutManager:manager];
+        replacement = [[[self class] alloc] initWithFrame:self.frame textContainer:container];
+    }
+    
     replacement.translatesAutoresizingMaskIntoConstraints = NO;
 
     // Copy over constraints

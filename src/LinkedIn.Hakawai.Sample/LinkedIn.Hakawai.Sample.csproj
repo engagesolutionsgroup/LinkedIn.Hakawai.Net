@@ -1,16 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <TargetFramework>net8.0-ios</TargetFramework>
-        <OutputType>Exe</OutputType>
-        <Nullable>enable</Nullable>
-        <ImplicitUsings>true</ImplicitUsings>
-        <SupportedOSPlatformVersion>13.0</SupportedOSPlatformVersion>
-        <RootNamespace>Hakawai.Sample</RootNamespace>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <MtouchLink>SdkOnly</MtouchLink>
-    </PropertyGroup>
-    <ItemGroup>
-      <ProjectReference Include="..\LinkedIn.Hakawai\LinkedIn.Hakawai.csproj" />
-    </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0-ios</TargetFramework>
+		<OutputType>Exe</OutputType>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>true</ImplicitUsings>
+		<SupportedOSPlatformVersion>13.0</SupportedOSPlatformVersion>
+		<RootNamespace>Hakawai.Sample</RootNamespace>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+		<MtouchLink>SdkOnly</MtouchLink>
+	</PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\LinkedIn.Hakawai\LinkedIn.Hakawai.csproj" />
+	</ItemGroup>
 </Project>
